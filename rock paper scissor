@@ -1,0 +1,54 @@
+import random
+
+#play function
+def play():
+    print("Welcome to ROCK PAPER SCISSOR GAME \N{grinning face}!!!")
+    print("INSTRUCTIONS!!!")
+    print("1.Enter 'rock','paper' or 'scissor'")
+    print("2.Computer will choose randomly")
+    print("---------------------------------------")
+    print("RULES!!!:")
+    print("1.Rock beats scissor")
+    print("2.Scissor beats paper")
+    print("3.Paper beats rock")
+    print("---------------------------------------")
+    
+    user=input("Enter your choice: ")
+    computer=random.choice(['rock','paper','scissor'])
+    winner(user, computer)
+    print("---------------------------------------")
+    print(f'Your choice : {user} ')
+    print(f'Computer choice : {computer}')
+    print("-----------------------------------------")
+    print(f'Result : {winner(user,computer)}')
+
+    
+#function for deciding the winner
+def  winner(user,computer):   
+    if user==computer:
+        return "It's a Tie!\U0001F60E"
+    elif ((user == "rock" and computer == "scissor") or (user== "scissor" and computer == "paper") or 
+          (user == "paper" and computer == "rock")):
+        return "You win!\U0001F973"
+    else:
+         return "You lose!\N{loudly crying face}"
+    
+
+#main function  
+def main():
+    play()
+    while True:
+        ch=input("Do you want to play again(y/n): ").lower()
+        if ch=='y':
+            play()
+        else:
+            print("Thankyou for playing\U0001F496!!!")
+            break
+
+    
+#function call will start from here   
+if __name__=="__main__":
+    main()
+    
+    
+    
